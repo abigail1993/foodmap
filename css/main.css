@@ -1,4 +1,36 @@
 body {
   background-color: #2B2B2B;
-  color: #D1792A;
+
 }
+iframe {
+  width: 100%;
+}
+
+.row > div > img {
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+  width: 30vh;
+  height: 20vh;
+}
+
+h1 {
+  color: #AA692F;
+}
+
+#splashscreen, #principal {
+  height: 100vh;
+}
+
+
+#filtered {
+  color: white;
+  width: 50%;
+}
+
+  /*Estilos del modal de la información de los de los restaurantes*/
+ #img-restaurant {
+   width: 40%;
+ }

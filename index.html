@@ -1,48 +1,86 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foodmap</title>
+    <title>Food map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="js/app.js">
-
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-  <body>
-    <!-- vista prinipal-->
-    <div class="container-fluid">
+  <body onload="splash(1000)">
+    <section id="splashscreen" class="col m12 splashscreen">
+      <h1 class="center">Foodmap</h1>
+    </section>
+
+    <section id="principal" class="col m12">
+      <h1 class="center" >Foodmap</h1>
       <div class="row">
-        <div class="col-sm-12">
-          <h1>Foodmap</h1>
-          <hr><!--aqui debe de ir una barra para modificar -->
+        <div class="col m1"><i class="material-icons right">check_box_outline_blank</i></div>
+        <div class="col m10"><hr></div>
+        <div class="col m1"><i class="material-icons">check_box_outline_blank</i></div>
+      </div>
+      <div class="col m12 center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15051.825702856318!2d-99.16223194999999!3d19.414288599999995!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1516397959177" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <div class="center">
+        <input class="center" id="filtered" placeholder="filtrar restaurantes" type="text">
+      </div>
+      <div class="row">
+        <div class="col m3">
+          <img id="Japonesa" data-index="4" class="modal-trigger" href="#modal1" src="assets/images/principal1.jpg" alt="restaurant-1">
+        </div>
+        <div class="col m3">
+          <img id="China" data-index="0" class="modal-trigger" href="#modal1" src="assets/images/principal2.jpg" alt="restaurant-3">
+        </div>
+        <div class="col m3">
+          <img id="Portuguesa" data-index="5" class="modal-trigger" href="#modal1" src="assets/images/principal3.png" alt="restaurant-3">
+        </div>
+        <div class="col m3">
+          <img id="Argentina" data-index="2" class="modal-trigger" href="#modal1" src="assets/images/principal4.jpg" alt="restaurant-4">
         </div>
       </div>
+
+    </section>
+
+
+
+<!-- empiezan los modales.-->
+
+    <div id="modal1" class="modal">
+      <div class="modal-content col s6 m6">
+          <div class="row">
+            <a href="#!" id="close" class="modal-action modal-close waves-effect waves-green btn-flat right">x</a>
+          </div>
+          <div class="row">
+            <div class="col s12 m12">
+              <span id="name-restaurant"></span>
+            </div>
+            <div class="col s12 m12 center">
+              <img id="img-restaurant" src=""><!--imagen-->
+            </div>
+            <div class="row">
+              <p></p>
+              <a class="btn waves-effect waves-light orange">pedir ahora</a>
+            </div>
+            <div class="row">
+              <div class="col s6 m6">
+                <p id="adress"></p>
+              </div>
+              <div class="col s6 m6">
+                <p id="price-range"></p>
+                <p id="home-service"></p>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
-  <!-- mapa-->
-  <div class="container-fluid">
-    <div class="row">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15051.825702856318!2d-99.16223194999999!3d19.414288599999995!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1516397959177" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-  </div>
 
 
-  <!-- filtrar-->
-  <div class="container-fluid">
-    <div class="row">
-      <h3>Comida cerca de ti</h3>
-      <input type="text" name="" value="">
-    </div>
-  </div>
-
-  <!--imagenes-->
-  <div class="">
-
-  </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/data.js">
+    </script>
+    <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
